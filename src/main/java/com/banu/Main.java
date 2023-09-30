@@ -3,6 +3,9 @@ package com.banu;
 import com.banu.criteria.OgrenciCriteria;
 import com.banu.criteria.OgretmenCriteria;
 import com.banu.criteria.SinifCriteria;
+import com.banu.dao.Ogrencidao;
+import com.banu.dao.Ogretmendao;
+import com.banu.dao.Sinifdao;
 import com.banu.enums.EBrans;
 import com.banu.repository.entity.KisiselBilgiler;
 import com.banu.repository.entity.Ogrenci;
@@ -74,10 +77,24 @@ public class Main {
         System.out.println(ogretmenCriteria.findById(2L));
          */
 
+        /*
         SinifCriteria sinifCriteria = new SinifCriteria();
        sinifCriteria.findAll().forEach(System.out::println);
         System.out.println("********************************");
         System.out.println(sinifCriteria.findById(1L));
+        */
+
+        Ogrencidao ogrencidao = new Ogrencidao();
+        //ogrencidao.findAll();
+        //ogrencidao.findById(1L);
+
+        Ogretmendao ogretmendao = new Ogretmendao();
+        //ogretmendao.findAll();
+        //ogretmendao.findById(1L);
+
+        Sinifdao sinifdao = new Sinifdao();
+        //sinifdao.findAll();
+        sinifdao.findById(1L);
 
 
 
