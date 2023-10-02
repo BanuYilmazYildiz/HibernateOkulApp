@@ -1,10 +1,15 @@
 package com.banu.utility;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICrud <T>{
 
+    T save(T entity);
+
+    void update(T entity);
+
     List<T> findAll();
 
-    T findById(Long id);
+    Optional<T> findById(Long id);
 }
