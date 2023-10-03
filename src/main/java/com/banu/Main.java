@@ -11,6 +11,7 @@ import com.banu.repository.OgrenciRepository;
 import com.banu.repository.entity.KisiselBilgiler;
 import com.banu.repository.entity.Ogrenci;
 import com.banu.utility.HibernateUtility;
+import com.sun.xml.bind.v2.TODO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -25,10 +26,10 @@ public class Main {
 //        Session session = HibernateUtility.getSessionFactory().openSession();
 //        Transaction transaction = session.beginTransaction();
 //
-        Ogrenci ogrenci = Ogrenci.builder()
-                .kisiselBilgiler(KisiselBilgiler.builder().ad("Mehmet").soyad("Yilmaz").tcKimlikNo("154418").build())
-                .dogumTarihi(LocalDate.of(1997,2,14))
-                .build();
+//        Ogrenci ogrenci = Ogrenci.builder()
+//                .kisiselBilgiler(KisiselBilgiler.builder().ad("Mehmet").soyad("Yilmaz").tcKimlikNo("154418").build())
+//                .dogumTarihi(LocalDate.of(1997,2,14))
+//                .build();
 
 //        session.save(ogrenci);
 //        transaction.commit();
@@ -107,22 +108,29 @@ public class Main {
 //        OgrenciController ogrenciController = new OgrenciController();
 //        ogrenciController.save(ogrenci);
 
-        Ogretmen ogretmen = Ogretmen.builder()
-                .kisiselBilgiler(KisiselBilgiler.builder().ad("Nurten").soyad("Kucuk").tcKimlikNo("5897877").build())
-                .brans(EBrans.MATEMETIK)
-                .iseBaslamaTarihi(LocalDate.of(1975,6,10))
-                .build();
-        OgretmenController ogretmenController = new OgretmenController();
-        ogretmenController.save(ogretmen);
+//        Ogretmen ogretmen = Ogretmen.builder()
+//                .kisiselBilgiler(KisiselBilgiler.builder().ad("Nurten").soyad("Kucuk").tcKimlikNo("5897877").build())
+//                .brans(EBrans.MATEMETIK)
+//                .iseBaslamaTarihi(LocalDate.of(1975,6,10))
+//                .build();
+//        OgretmenController ogretmenController = new OgretmenController();
+//        ogretmenController.save(ogretmen);
+//
+//        Sinif sinif = Sinif.builder()
+//                .sinifAdi("9C")
+//                .ogretmenId(ogretmen.getId())
+//                .ogrenciList(Arrays.asList(ogrenci.getKisiselBilgiler().getAd()))
+//                .build();
+//        SinifController sinifController = new SinifController();
+//        sinifController.save(sinif);
 
-        Sinif sinif = Sinif.builder()
-                .sinifAdi("9C")
-                .ogretmenId(ogretmen.getId())
-                .ogrenciList(Arrays.asList(ogrenci.getKisiselBilgiler().getAd()))
-                .build();
-        SinifController sinifController = new SinifController();
-        sinifController.save(sinif);
+        OgrenciController ogrenciController = new OgrenciController();
+       // ogrenciController.findAll().forEach(System.out::println);
+        //System.out.println(ogrenciController.findById(3L));
 
+        //SORRRRRRRRRRRRRRRRRRRRRRRRRRRR
+        //System.out.println(ogrenciController.findByColumnNameAndValue("soyad","Mehmet"));
+        System.out.println(ogrenciController.existById(2L));
 
 
 

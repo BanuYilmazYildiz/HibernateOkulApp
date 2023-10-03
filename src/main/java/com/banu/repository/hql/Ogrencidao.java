@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
-public class Ogrencidao implements ICrud<Ogrenci> {
+public class Ogrencidao implements ICrud<Ogrenci,Long> {
     Session session = HibernateUtility.getSessionFactory().openSession();
     private final EntityManager  entityManager= HibernateUtility.getSessionFactory().createEntityManager();
 
@@ -48,6 +48,31 @@ public class Ogrencidao implements ICrud<Ogrenci> {
         Ogrenci ogrenci = (Ogrenci) query.setParameter("deger", id).getSingleResult();
         System.out.println(ogrenci);
         return Optional.ofNullable(ogrenci);
+    }
+
+    @Override
+    public void saveAll(Iterable<Ogrenci> entites) {
+
+    }
+
+    @Override
+    public void delete(Ogrenci entity) {
+
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
+
+    @Override
+    public boolean existById(Long aLong) {
+        return false;
+    }
+
+    @Override
+    public List<Ogrenci> findByColumnNameAndValue(String columnName, String value) {
+        return null;
     }
 
     public Optional<Ogrenci> findById2(Long id) {

@@ -29,4 +29,24 @@ public class SinifController {
     public Optional<Sinif> findById(Long id){
         return sinifService.findById(id);
     }
+
+    public void saveAll(Iterable<Sinif> entites){
+        sinifService.saveAll(entites);
+    }
+
+    public void delete(Sinif entity) {
+        sinifService.delete(entity);
+    }
+
+    public void deleteById(Long id) {
+        sinifService.deleteById(id);
+    }
+
+    public boolean existById(Long id) {
+        return  sinifService.existById(id);
+    }
+
+    public List<Sinif> findByColumnNameAndValue(String columnName, String value) {
+        return sinifService.findByColumnNameAndValue(columnName,value);
+    }
 }

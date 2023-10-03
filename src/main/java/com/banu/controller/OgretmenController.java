@@ -29,4 +29,24 @@ public class OgretmenController {
     public Optional<Ogretmen> findById(Long id){
         return ogretmenService.findById(id);
     }
+
+    public void saveAll(Iterable<Ogretmen> entites){
+        ogretmenService.saveAll(entites);
+    }
+
+    public void delete(Ogretmen entity) {
+        ogretmenService.delete(entity);
+    }
+
+    public void deleteById(Long id) {
+        ogretmenService.deleteById(id);
+    }
+
+    public boolean existById(Long id) {
+        return  ogretmenService.existById(id);
+    }
+
+    public List<Ogretmen> findByColumnNameAndValue(String columnName, String value) {
+        return ogretmenService.findByColumnNameAndValue(columnName,value);
+    }
 }

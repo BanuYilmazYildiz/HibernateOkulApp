@@ -16,8 +16,6 @@ public class OgretmenService {
         this.ogretmenRepository=new OgretmenRepository();
     }
 
-
-
     public Ogretmen save(Ogretmen ogretmen){
         return ogretmenRepository.save(ogretmen);
     }
@@ -31,6 +29,26 @@ public class OgretmenService {
     }
     public Optional< Ogretmen> findById(Long id){
         return ogretmenRepository.findById(id);
+    }
+
+    public void saveAll(Iterable<Ogretmen> entites){
+       ogretmenRepository.saveAll(entites);
+    }
+
+    public void delete(Ogretmen entity) {
+        ogretmenRepository.delete(entity);
+    }
+
+    public void deleteById(Long id) {
+        ogretmenRepository.deleteById(id);
+    }
+
+    public boolean existById(Long id) {
+        return  ogretmenRepository.existById(id);
+    }
+
+    public List<Ogretmen> findByColumnNameAndValue(String columnName, String value) {
+        return ogretmenRepository.findByColumnNameAndValue(columnName,value);
     }
 
 }
